@@ -41,7 +41,6 @@ public class PaymentService {
                         .creditorUserId(creditorInfo.getId())
                         .debtorUserId(debtorInfo.getId())
                         .debtorUserAmount(request.getAmount())
-                        .
                 .build())
     }
 }
