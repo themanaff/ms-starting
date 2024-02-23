@@ -41,7 +41,7 @@ public class PaymentsEntity {
     @PrePersist
     public void assignDefaultValues(){
         createdAt = LocalDateTime.now();
-        status = 1;
+        status = 0;
     }
 
     @Override
