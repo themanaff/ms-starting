@@ -45,3 +45,23 @@ databaseChangeLog:
                     nullable: false
             remarks: table that store payment information #keeps information about table
             schemaName: public
+
+  - changeSet:
+      id: Add status column to payment table
+      author: Manaf Ahmadov
+      changes:
+        - addColumn:
+            tableName: payment
+            columns:
+              - column:
+                  name: status
+                  type: int
+                  remarks: Bu column odenis status larini saxlayir
+
+  - changeSet:
+      id: dropNotNullConstraint-updatedAt-for-payments
+      author: Any
+      changes:
+        - dropNotNullConstraint:
+            columnName: updated_at
+            tableName: payment
