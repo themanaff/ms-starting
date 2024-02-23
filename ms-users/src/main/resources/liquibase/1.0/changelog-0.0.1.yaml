@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating "users" table
+      author: Manaf Ahmadov
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: balance
+                  type: number(16,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: currency
+                  type: varchar(5)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: int
+              - column:
+                  name: birth_date
+                  type: timestamp
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueDate: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueDate: now()
+                  constraints:
+                    nullable: false
+            remarks: table that store the information of users #keeps information about table
+            schemaName: public
+
+  - changeSet:
+      id: dropNotNullConstraint-updated_at
+      author: Any
+      changes:
+        - dropNotNullConstraint:
+            columnName: updated_at
+            tableName: users
+
+  - changeSet:
+      id: dropDefaultValue-updatedAt
+      author: Any
+      changes:
+        - dropDefaultValue:
+            columnName: updated_at
+            schemaName: public
+            tableName: users

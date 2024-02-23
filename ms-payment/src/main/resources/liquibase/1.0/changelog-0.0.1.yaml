@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating "payment" table
+      author: Manaf Ahmadov
+      changes:
+        - createTable:
+            tableName: payment
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: debtor_user_id
+                  type: bigint
+              - column:
+                  name: creditor_user_id
+                  type: bigint
+              - column:
+                  name: debtor_user_amount
+                  type: number(16,2)
+              - column:
+                  name: creditor_user_amount
+                  type: number(16,2)
+              - column:
+                  name: debtor_user_currency
+                  type: varchar(5)
+              - column:
+                  name: creditor_user_currency
+                  type: varchar(5)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueDate: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueDate: now()
+                  constraints:
+                    nullable: false
+            remarks: table that store payment information #keeps information about table
+            schemaName: public
