@@ -35,13 +35,17 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	implementation 'org.liquibase:liquibase-core'
 
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
 
 	implementation "org.mapstruct:mapstruct:${mapStructVersion}"
 	annotationProcessor "org.mapstruct:mapstruct-processor:${mapStructVersion}"
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'net.javacrumbs.shedlock:shedlock-spring:4.42.0'
+	implementation 'net.javacrumbs.shedlock:shedlock-provider-jdbc-template:4.42.0'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 }
 
 dependencyManagement {

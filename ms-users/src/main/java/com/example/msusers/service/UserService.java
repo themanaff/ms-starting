@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import static com.example.msusers.constant.CurrencyConstant.AZN;
-import static com.example.msusers.constant.StatusConstant.ACTIVE;
+import static com.example.msusers.dto.constant.CurrencyConstant.AZN;
+import static com.example.msusers.dto.constant.StatusConstant.ACTIVE;
 
 
 @Service

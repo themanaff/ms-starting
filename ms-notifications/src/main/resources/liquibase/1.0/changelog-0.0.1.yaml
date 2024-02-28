@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating "notifications" table
+      author: Manaf Ahmadov
+      changes:
+        - createTable:
+            tableName: notifications
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: message
+                  type: text(500)
+              - column:
+                  name: user_id
+                  type: int
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValueDate: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValueDate: now()
+                  constraints:
+                    nullable: false
+            remarks: table that store notifications' information #keeps information about table
+            schemaName: public
+
+  - changeSet:
+      id: dropNotNullConstraint-updatedAt-for-notifications
+      author: Any
+      changes:
+        - dropNotNullConstraint:
+            columnName: updated_at
+            tableName: notifications

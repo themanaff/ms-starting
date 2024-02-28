@@ -1,4 +1,4 @@
-package com.example.msusers.constant;
+package com.example.ms.payment.dto.constant;
 
 import lombok.AccessLevel;
 import lombok.Getter;
