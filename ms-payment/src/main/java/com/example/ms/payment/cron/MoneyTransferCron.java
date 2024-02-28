@@ -12,7 +12,12 @@ import org.springframework.stereotype.Component;
 @FieldDefaults(level = AccessLevel.PACKAGE,makeFinal = true)
 public class MoneyTransferCron {
     PaymentService paymentService;
-    @Scheduled(fixedDelayString = "PT10S")//every 10seconds
+//    @Scheduled(fixedDelayString = "PT10S")//every 10seconds
+//    public void updateAnyData() {
+//        paymentService.sendPaymentToAzericard();
+//    }
+
+    @Scheduled(cron = "${scheduler.cron.expired-something}")
     public void updateAnyData() {
         paymentService.sendPaymentToAzericard();
     }

@@ -17,11 +17,13 @@ spring:
   liquibase:
     change-log: classpath:liquibase/changelog-master.yml #here we give the location of changelog file that store the location of the changesets
 
-  scheduler:
-    cron:
-      expired-something: 0 0 20 2 * ?
+scheduler:
+  cron:
+    expired-something: 0 31 16 * * ?
       # s m h M every # at 20:00 on 2nd day of every month these are cron job
       # https://crontab.guru/
+
+
 
 server:
   port: 9090
