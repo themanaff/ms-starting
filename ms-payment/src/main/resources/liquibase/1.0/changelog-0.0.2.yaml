@@ -17,10 +17,10 @@ databaseChangeLog:
                   name: lock_until
                   type: timestamp
               - column:
-                  name: Locked_at
+                  name: locked_at
                   type: timestamp
               - column:
-                  name: Locked_by
+                  name: locked_by
                   type: varchar(256)
                   constraints:
                     nullable: false
