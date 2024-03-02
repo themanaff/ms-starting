@@ -4,9 +4,11 @@ import com.example.msusers.dao.entity.UsersEntity;
 import com.example.msusers.dao.repository.UserRepository;
 import com.example.msusers.dto.request.UserPaymentTransferRequest;
 import com.example.msusers.dto.response.GetUserByIdResponse;
+import com.example.msusers.handler.exception.NotFoundError;
 import com.example.msusers.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -27,7 +29,7 @@ public class UserService {
 
     private UsersEntity fetchActiveUserById(Long id) {
         return userRepository.findByIdAndStatus(id, ACTIVE.getStatus()).orElseThrow(
-                () -> new RuntimeException("User with " + " id couldn't be found"));
+                () -> new NotFoundError("User with id " + id + " couldn't be found","NOT_FOUND",LocalDateTime.now()));
     }
 
 //    @PostConstruct
@@ -48,6 +50,7 @@ public class UserService {
                 .build());
     }
 
+    @Transactional
     public void transferMoney(UserPaymentTransferRequest request){
         var creditorUser = fetchActiveUserById(request.getCreditorUserId());
         var debtorUser = fetchActiveUserById(request.getDebtorUserId());
