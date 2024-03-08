@@ -1,0 +1,5 @@
+server:
+  port: 7575
+
+urls:
+  cbar-az: https://cbar.az/currencies
