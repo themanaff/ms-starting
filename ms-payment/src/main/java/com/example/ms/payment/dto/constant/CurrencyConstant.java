@@ -1,4 +1,4 @@
-package com.example.msusers.dto.constant;
+package com.example.ms.payment.dto.constant;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE,makeFinal = true)
 @RequiredArgsConstructor
 public enum CurrencyConstant {
-    AZN(1D),USD(1.7),EUR(1.8);
-    Double value;
+    AZN("AZN"),USD("USD"),EUR("EUR");
+    String value;
 }

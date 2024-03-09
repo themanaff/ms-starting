@@ -35,7 +35,6 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	implementation 'org.liquibase:liquibase-core'
 
-
 	implementation "org.mapstruct:mapstruct:${mapStructVersion}"
 	annotationProcessor "org.mapstruct:mapstruct-processor:${mapStructVersion}"
 

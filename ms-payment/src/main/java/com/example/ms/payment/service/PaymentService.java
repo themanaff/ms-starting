@@ -51,6 +51,10 @@ public class PaymentService {
         });
     }
 
+    public void sendMoneyFromDebtorToCreditor(){
+
+    }
+
     private List<PaymentsEntity> fetchAllDeactivePayments() {
         return paymentRepository.findAllByStatus(DE_ACTIVE.getStatus())
                 .orElseGet(ArrayList::new);

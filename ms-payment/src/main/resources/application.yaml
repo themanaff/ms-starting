@@ -31,3 +31,4 @@ server:
 urls:
   ms-users: http://localhost:8080/users
   ms-notifications: http://localhost:8585/notifications
+  ms-currencies: http://localhost:7575/currencies

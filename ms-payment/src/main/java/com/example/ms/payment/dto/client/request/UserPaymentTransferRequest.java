@@ -13,8 +13,8 @@ import java.math.BigDecimal;
 public class UserPaymentTransferRequest {
     Long debtorUserId;
     Long creditorUserId;
-
-    BigDecimal debtorUserAmount;
-    BigDecimal creditorUserAmount;
+    BigDecimal amount;
+    String debtorCurrency;
+    String creditorCurrency;
 
 }

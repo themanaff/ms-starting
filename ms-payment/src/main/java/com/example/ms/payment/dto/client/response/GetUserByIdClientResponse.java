@@ -18,5 +18,6 @@ public class GetUserByIdClientResponse {
     private String name;
     private String surname;
     private BigDecimal balance;
-    private String currency;
+    private String debtorCurrency;
+    private String creditorCurrency;
 }

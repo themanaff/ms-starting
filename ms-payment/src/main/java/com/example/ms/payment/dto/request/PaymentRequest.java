@@ -15,5 +15,6 @@ public class PaymentRequest {
     Long debtorUserId;
     Long creditorUserId;
     BigDecimal amount;
-    String currency;
+    String debtorCurrency;
+    String creditorCurrency;
 }
