@@ -1,4 +1,4 @@
-package com.example.mscurrency.dto;
+package com.example.mscurrency.dao;
 
 import jakarta.xml.bind.annotation.*;
 import lombok.*;
@@ -6,13 +6,14 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @XmlRootElement(name = "ValCurs")
 @XmlAccessorType(XmlAccessType.FIELD)
-@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Builder
+
 public class ValCurs {
 
     @XmlAttribute(name = "Date")

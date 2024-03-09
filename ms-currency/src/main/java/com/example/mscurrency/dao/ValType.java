@@ -1,10 +1,9 @@
-package com.example.mscurrency.dto;
+package com.example.mscurrency.dao;
 
 import jakarta.xml.bind.annotation.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor

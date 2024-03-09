@@ -1,4 +1,4 @@
-package com.example.mscurrency.dto;
+package com.example.mscurrency.dao;
 
 import jakarta.xml.bind.annotation.*;
 import lombok.*;
@@ -6,13 +6,13 @@ import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @XmlRootElement(name = "Valute")
 @XmlAccessorType(XmlAccessType.FIELD)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Data
-@Builder
 public class Valute {
 
     @XmlAttribute(name = "Code")
@@ -22,6 +22,6 @@ public class Valute {
     @XmlElement(name = "Name")
     String name;
     @XmlElement(name = "Value")
-    BigDecimal price;
+    BigDecimal value;
 
 }
