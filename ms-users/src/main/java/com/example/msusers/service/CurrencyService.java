@@ -1,6 +1,7 @@
-package com.example.ms.payment.service;
+package com.example.msusers.service;
 
-import com.example.ms.payment.client.CurrencyClient;
+
+import com.example.msusers.client.CurrencyClient;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

@@ -16,3 +16,6 @@ spring:
     show-sql: true
   liquibase:
     change-log: classpath:liquibase/changelog-master.yml #here we give the location of changelog file that store the location of the changesets
+
+urls:
+  ms-currencies: http://localhost:7575/currencies

@@ -18,8 +18,8 @@ public class UserController {
     public GetUserByIdResponse getUserById(@PathVariable Long id){
         return userService.getUserById(id);
     }
-    @PutMapping("/money-transfer")
-    public void getUserById(@RequestBody UserPaymentTransferRequest request){
+    @PostMapping    ("/money-transfer")
+    public void transferMoney(@RequestBody UserPaymentTransferRequest request){
         userService.transferMoney(request);
     }
 }
