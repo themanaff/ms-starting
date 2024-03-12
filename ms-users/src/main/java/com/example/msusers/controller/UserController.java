@@ -13,12 +13,11 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserService userService;
 
-
     @GetMapping("{id}")
     public GetUserByIdResponse getUserById(@PathVariable Long id){
         return userService.getUserById(id);
     }
-    @PostMapping    ("/money-transfer")
+    @PostMapping("/money-transfer")
     public void transferMoney(@RequestBody UserPaymentTransferRequest request){
         userService.transferMoney(request);
     }

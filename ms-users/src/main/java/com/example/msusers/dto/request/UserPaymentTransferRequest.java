@@ -18,5 +18,4 @@ public class UserPaymentTransferRequest {
     BigDecimal amount;
     String debtorCurrency;
     String creditorCurrency;
-
 }
