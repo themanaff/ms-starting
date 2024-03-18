@@ -22,7 +22,6 @@ import java.util.Optional;
 @FieldDefaults(level = AccessLevel.PRIVATE,makeFinal = true)
 public class CurrencyService {
     CurrencyClient currencyClient;
-
     public String getCurrencyData(String date){
         return currencyClient.getCurrencyData(date);
     }

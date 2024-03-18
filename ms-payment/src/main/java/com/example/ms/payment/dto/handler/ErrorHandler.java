@@ -1,7 +1,7 @@
-package com.example.msusers.handler;
+package com.example.ms.payment.dto.handler;
 
-import com.example.msusers.dto.response.ErrorResponse;
-import com.example.msusers.handler.exception.NotFoundError;
+import com.example.ms.payment.dto.handler.exception.NotFoundError;
+import com.example.ms.payment.dto.response.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,9 +15,9 @@ import java.time.LocalDateTime;
 public class ErrorHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(NotFoundError.class)
-    public ErrorResponse handle(NotFoundError error) {
+    public com.example.ms.payment.dto.response.ErrorResponse handle(NotFoundError error) {
         log.error("ActionLog.handle.error: {}", error);
-        return ErrorResponse.builder()
+        return com.example.ms.payment.dto.response.ErrorResponse.builder()
                 .message(error.getMessage())
                 .status(error.getStatus())
                 .occurredAt(error.getOccurredAt())
@@ -25,7 +25,7 @@ public class ErrorHandler {
     }
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(RuntimeException.class)
-    public ErrorResponse handle(RuntimeException error) {
+    public com.example.ms.payment.dto.response.ErrorResponse handle(RuntimeException error) {
         log.error("ActionLog.handle.error: {}", error);
         return ErrorResponse.builder()
                 .message(error.getMessage())
